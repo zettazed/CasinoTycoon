@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "295357860602",
+    "project_id": "casino-846e7",
+    "storage_bucket": "casino-846e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:295357860602:android:13972e9079c912efcd5743",
+        "android_client_info": {
+          "package_name": "com.finik.casino"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "295357860602-fe5366sgornlspmva3hba7ntahuagic9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjEwg80R_5Tp_vU1rPvsVjM6-CPK3a14g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "295357860602-fe5366sgornlspmva3hba7ntahuagic9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
