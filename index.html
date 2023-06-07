@@ -103,6 +103,44 @@
     };
     document.body.appendChild(script);
 
+    function share ()
+    {
+      vkBridge.send('VKWebAppShowWallPostBox', {
+          message: 'Я открыл своё казино, и уже развиваюсь в этой сфере, посоревнуемся?',
+          attachment: 'https://vk.com/app51666967_387202353',
+        })
+        .then( (data) => {
+          // Запись отправлена на стену
+          unityInstance.SendMessage('VKManager', 'GiveMoney5000', JSON.stringify(data.result));
+          console.log(`Идентификатор записи: ${data.post_id}`);
+        })
+        .catch( (e) => {
+          console.log("Ошибка!", e);
+        })
+    }
+
+    function friendInvite ()
+    {
+      vkBridge.send('VKWebAppShowInviteBox', { 
+      
+      })
+      .then( (data) => {
+        if (data.success) {
+          // Приглашение выслано ...
+          // ...
+          unityInstance.SendMessage('VKManager', 'GiveMoney1000', JSON.stringify(data.result));
+          // Эти пользователи не получили сообщение
+          // console.log('Приглашение не было отослано', data.notSentIds );
+        }
+      })
+      .catch( (e) => { 
+        let { error_code, error_reason } = e.error_data; 
+        if( error_code == 4 && error_reason == 'User denied') {
+          // Пользователь нажал «Отмена» в диалоге
+        }  
+      });
+    }
+
     jQuery(document).ready(function($) // страница прогружена
     {
       vkBridge.send('VKWebAppInit');
