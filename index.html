@@ -144,7 +144,7 @@
       });
     }
     
-    bridge.subscribe((e) => {
+    vkBridge.subscribe((e) => {
       if (e.detail.type === 'VKWebAppViewHide') {
         unityInstance.SendMessage('VKManager', 'AudioOff', JSON.stringify(data.result)); // Останавливаем воспроизведение аудио 
         // Действия при переключении
